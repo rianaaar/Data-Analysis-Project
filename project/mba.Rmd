@@ -1,0 +1,200 @@
+---
+title: "Market Basket Analysis for Bread Store"
+output: html_notebook
+---
+# Introduction
+Bread Store is a restaurant that sells food and drinks. The more competitors make the Bread store must continue to innovate. Also, many products are selling very slowly, which causes their stock to build up.
+One solution to overcome this problem is to make product packaging that has a strong association (often purchased together) use the Market Basket Analysis method.
+
+Example: Customer often buys bread with milk. So, we can make a package of bread with milk.
+This strategy can attract customers to buy more than 1 product and can increase revenue.
+
+In this project, I will solve the problems faced by the Bread Store.
+
+## Dataset
+All the data is downloaded from Kaggle.com
+```{r}
+#set directory
+setwd("E:/Aar Riana/portofolio/Market Basket")
+#read data
+dataset = read.csv("bread_basket.csv")
+```
+
+```{r}
+str(dataset)
+```
+This dataset consists of 20,507 data with 5 variables:
+1. Transaction: unique id of each transaction
+2. Item: The name of the product purchased
+3. date_time: the date of the transaction
+4. Period_time: transaction time
+5. weekday_weekend: transaction days (weekdays or weekends)
+
+# Data Cleansing and Data Exploration
+```{r}
+#check missing value
+library(mice)
+md.pattern(dataset)
+```
+There is no missing value.
+```{r}
+#add new field date from date_time
+dataset$Date <- as.Date(dataset$date_time,format="%d-%m-%Y")
+```
+
+```{r}
+head(dataset)
+tail(dataset)
+```
+
+```{r}
+total_transaction = length(unique(dataset[,"Transaction"])) 
+total_item = length(unique(dataset[,"Item"]))
+total = c(total_transaction, total_item)
+total
+```
+There were 9,465 transactions with 94 items sold.
+
+```{r}
+summary(dataset)
+```
+* Transactions data are from 30 October 2016 to 9 April 2017.
+* The busiest day is weekdays at lunchtime (Afternoon).
+```{r}
+#Sales per item
+library(dplyr)
+dataset %>% group_by(Item) %>% dplyr::summarise(count=n())
+```
+```{r}
+#How many item each customer buy?
+library(ggplot2)
+library(scales)
+convert2perc = scales::percent_format(accuracy=0.01)
+dat = dataset %>% 
+  group_by(Transaction) %>%
+  dplyr::summarise(count_z = sum(n_distinct(Item))) %>%
+  ggplot(aes(x=count_z)) +
+  geom_histogram(fill="indianred")+
+  scale_x_continuous(breaks= pretty_breaks())+
+  stat_count(geom="text", aes(label=convert2perc(..count../9465)), vjust=-0.5)
+dat
+```
+nearly 60% of customers purchase more than 1 different item in one transaction.
+
+```{r}
+# Top Items
+top_product <- dataset %>% 
+  group_by(Item) %>% 
+  dplyr::summarize(count = n()) %>% 
+  arrange(desc(count))
+top10 <- head(top_product, n=10)
+top10 %>% 
+  ggplot(aes(x=reorder(Item,count), y=count))+
+  geom_bar(stat="identity",fill="indian red")+
+  coord_flip() +
+  geom_label(aes(label=count), position = position_dodge(width=1))
+```
+
+```{r}
+#less desirable products
+bottom_product <- dataset %>% 
+  group_by(Item) %>% 
+  dplyr::summarize(count = n()) %>% 
+  arrange(count)
+bottom10 <- head(bottom_product, n=10)
+bottom10 %>% 
+  ggplot(aes(x=reorder(Item,count), y=count))+
+  geom_bar(stat="identity",fill="indian red")+
+  coord_flip() 
+#+geom_label(aes(label=count), position = position_dodge(width=1))
+```
+# Data Preparation
+Create a dataset for modeling.
+We only need a list of items purchased together in 1 transaction.
+```{r}
+#dataset_sorted <- dataset[order(dataset$Transaction),]
+library(dplyr)
+itemList <- ddply(dataset,c("Transaction","date_time"), 
+                       function(df1)paste(df1$Item, 
+                       collapse = ","))
+itemList
+```
+
+```{r}
+itemList$Transaction <- NULL
+itemList$date_time <- NULL
+colnames(itemList) <- c("items")
+#write.csv(itemList,"mba_items.csv", quote = FALSE, row.names = TRUE)
+```
+
+# Modelling
+```{r}
+library(arules)
+transaction_data <- read.transactions(file="mba_items.csv", format="basket", sep=",",skip=1)
+summary(transaction_data)
+```
+## Market Basket Analysis
+
+It's time to find interesting items to sell together.
+The interesting definition of the Bread Store version is as follows:
+* Have a strong association or relationship (lift value > 1)
+* Item combination, minimum 2 items, and maximum 3 items.
+* The combination appears at least 10 of all transactions (support value)
+* Have a confidence level of at least 50% (confidence value)
+```{r}
+#Find interesting product bundling
+mba <- apriori(transaction_data,parameter = list(supp = 10/length(transaction_data), confidence = 0.5, minlen=2, maxlen=3))
+items_data <- subset(mba, lift>1)
+items_data <- sort(mba,by="confidence",descreasing=TRUE)
+summary(items_data)
+```
+* The number of rules: 94.
+* Most rules are 3 items.
+
+let's inspect top 10.
+```{r}
+inspect(items_data[1:10])
+```
+* 87% customers who bought "Extra Salmi or Feta and Salad" also bought "Coffee". This rule has strong association (lift value > 1). 
+* 86% customers who bought "Pastry and Toast" also bought "Coffee". This rule has strong association (lift value > 1). 
+
+```{r}
+#plot these rules
+library(arulesViz)
+topRules <- items_data[1:10]
+plot(topRules)
+plot(topRules, method="graph")
+```
+We can see that the top 10 rules have 70-90% confidence and strong association.
+
+## Slow-moving Items
+
+Slow-moving items are products with slow sales movements.
+Sometimes, it is better not to sell this item in units, which means we need to sell it with another product.
+we will look for strong associations of this product item with other products so that it becomes more attractive.
+
+There are 2 slow-moving items at the Bread Store, namely "Coke" and "Spanish Brunch".
+
+The requirements for this strong association are still the same as previously mentioned, except that the confidence is tested at a minimum level of 0.1.
+```{r}
+mba2 <- apriori(transaction_data,parameter = list(supp = 10/length(transaction_data), confidence = 0.1))
+items1 <- subset(mba2, (rhs %in% "Coke") & lift>1)
+items1 <- sort(items1, by="lift",descreasing=TRUE)
+#summary(items1)
+#inspect(items1)
+items2 <- subset(mba2, (rhs %in% "Spanish Brunch") & lift>1)
+items2 <- sort(items2, by="lift",descreasing=TRUE)
+inspect(items2)
+
+result <- c(items1,items2)
+inspect(result)
+```
+We can make product bundling Coke with Juice and Sandwich, and Spanish Brunch with Salad.
+
+# Conclusion
+
+A list of products that can be sold together has been found. These results can help Bread Store to promote its products and increase sales.
+Example: create a promotion say, Coffee & Cake at a cheaper price.
+
+This will encourage customers to buy multiple items instead of just 1 item only.
+The resulting rules for slow-moving items can also attract customers to buy them.
