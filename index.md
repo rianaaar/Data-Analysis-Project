@@ -4,26 +4,16 @@
 
 ### Data Science
 
-[Merchant Y Analysis](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
-[Customer Segmentation Using RFM and K-Means](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Customer Segmentation Using RFM and K-Means](/sample_page)
+<img src="images/rfm.jpg?raw=true"/>
 
 ---
 [Market Basket Analysis](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<img src="images/mba_plot.PNG?raw=true"/>
 
 ---
-
-### Data Visualization
-
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+[Merchant Y Analysis](/pdf/Case Study.pdf)
+<img src="images/SE.PNG?raw=true"/>
 
 ---
 
