@@ -2,18 +2,22 @@
 
 ---
 
-### Data Science
 
-[Customer Segmentation Using RFM and K-Means](/sample_page)
+### Customer Segmentation Using RFM and K-Means
+
 <img src="images/rfm.jpg?raw=true"/>
 
 ---
-[Market Basket Analysis](http://example.com/)
+### Market Basket Analysis
+
 <img src="images/mba_plot.PNG?raw=true"/>
 
 ---
-[Merchant Y Analysis](/pdf/Case Study.pdf)
-<img src="images/SE.PNG?raw=true"/>
+### Merchant Y Analysis
+
+[file](/pdf/Case Study.pdf)
+
+<img src="images/ES.PNG?raw=true"/>
 
 ---
 
