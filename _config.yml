@@ -1,10 +1,12 @@
 title: Aar Riana # your name (or website title) here
 logo: "logo.png?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  <center> 
-  [![See My LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=Linkedin)](https://www.linkedin.com/in/aar-riana/)
-  [![See My Github](https://img.shields.io/badge/Github-black?logo=github)](https://github.com/rianaaar)
-  </center>
+  <p align="center">
+  <a href="https://www.linkedin.com/in/aar-riana/">
+  <img src="https://img.shields.io/badge/LinkedIn-blue?logo=Linkedin" /> </a>
+  <a href="https://github.com/rianaaar/">
+  <img src="https://img.shields.io/badge/Github-black?logo=github" /> </a>
+  </p>
   <br>
   Bachelor of Computer Science
   <br>
