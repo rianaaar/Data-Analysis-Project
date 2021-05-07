@@ -3,6 +3,11 @@
 ---
 
 
+### Fraud Classification
+
+<img src="images/magnifier-with-fraud-message.jpg?raw=true"/>
+
+---
 ### Customer Segmentation Using RFM and K-Means
 
 <img src="images/rfm.jpg?raw=true"/>
