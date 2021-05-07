@@ -10,6 +10,7 @@
 In this project, I use Random Forest and XGboots to classify fraud transactions.</div>
 <br>
 <center><img src="images/magnifier-with-fraud-message.jpg"/> </center>
+<a href='https://www.freepik.com/photos/money'>Money photo created by freepik - www.freepik.com</a>
 
 ---
 ### Customer Segmentation Using RFM
