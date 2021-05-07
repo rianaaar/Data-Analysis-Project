@@ -45,7 +45,7 @@ Example: Customers often buy bread with milk. So, we can make a packet of bread 
 
 This is my final assignment from [Anakdata.id](https://anakdata.id/) Course.
 <br>
-<center><img src="images/ES.PNG?raw=true"/></center>
+<center><img src="images/Case Study.png"/></center>
 
 
 
