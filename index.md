@@ -4,25 +4,46 @@
 
 
 ### Fraud Classification
+[![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://colab.research.google.com/drive/1YJSJqN7X-fo9TnkQxPFdiK9KQWhPLEJV?usp=sharing)
 
-<img src="images/magnifier-with-fraud-message.jpg?raw=true"/>
+<div style="text-align: justify">Fraud transactions are invalid transactions, such as a stolen credit card or an illegal payment. These cases can cause a big loss. For this reason, the related parties must know what transactions can be categorized as fraud so that these transactions can be canceled. 
+In this project, I use Random Forest and XGboots to classify fraud transactions.</div>
+<br>
+<center><img src="images/magnifier-with-fraud-message.jpg"/> </center>
 
 ---
 ### Customer Segmentation Using RFM and K-Means
+[![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](project/RFM.html)
 
-<img src="images/rfm.jpg?raw=true"/>
+<div style="text-align: justify">One way to retain customers is increasing customer satisfaction, by providing services following customer expectations and needs. Every customer must have different characteristics so we need to identify the characteristics of each customer and combine them in each group (customer segmentation) to make the right decisions for retaining customers.
+In this project, I will use RFM to segment customers.
+
+RFM stands for Recency, Frequency, and Monetary value, each corresponding to some key of customer behavior.
+* Recency — How recently did the customer purchase?
+* Frequency — How often do they purchase?
+* Monetary Value — How much do they spend?
+</div>
+<br>
+<center> <img src="images/rfm.jpg"/></center>
 
 ---
 ### Market Basket Analysis
+[![Open R Code](https://img.shields.io/badge/%20Studio-Open%20R%20Code-blue?logo=r)](project/mba.RMD)
+<div style="text-align: justify">Bread Store is a restaurant that sells food and drinks. The increasing number of competitors makes bakeries must continue to innovate. In addition, many products sell very slowly, so their stock builds up. One solution to overcome this problem is to make product packaging that has a strong association (often bought together). We can use the Market Basket Analysis method. 
 
-<img src="images/mba_plot.PNG?raw=true"/>
+Example: Customers often buy bread with milk. So, we can make a packet of bread with milk. This strategy can attract customers to buy more than 1 product and can increase revenue.
+</div>
+<br>
+<center> <img src="images/mba_plot.PNG"/></center>
 
 ---
 ### Merchant Y Analysis
 
-[file](/pdf/Case Study.pdf)
+[![Open Presentation File](https://img.shields.io/badge/PDF-Open_Presentation_File-blue?logo=adobe-acrobat-reader&logoColor=white)](/pdf/Case Study.pdf)
 
-<img src="images/ES.PNG?raw=true"/>
+This is my final assignment from [AnakData.id](https://anakdata.id/) Course.
+<br>
+<center><img src="images/ES.PNG?raw=true"/></center>
 
 ---
 
