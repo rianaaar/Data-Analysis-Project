@@ -40,11 +40,12 @@ Example: Customers often buy bread with milk. So, we can make a packet of bread 
 <center> <img src="images/mba_plot.PNG"/></center>
 
 ---
-### Merchant Y Analysis
+### Sales Analysis
 
 [![Open Presentation File](https://img.shields.io/badge/PDF-Open_Presentation_File-blue?logo=adobe-acrobat-reader&logoColor=white)](pdf/Case Study.pdf)
+[![Open Presentation File](https://img.shields.io/badge/Google%20Data%20Studio-Open_Google%20Data%20Studio-blue)](https://datastudio.google.com/reporting/099d224f-f7b0-4c5d-b8e7-3751bd88fd76)
 
-This is my final assignment from [Anakdata.id](https://anakdata.id/) Course.
+Sales Analysis using Google Speadsheet. This is my final assignment from [Anakdata.id](https://anakdata.id/) Course.
 <br>
 <center><img src="images/Case Study.png"/></center>
 
