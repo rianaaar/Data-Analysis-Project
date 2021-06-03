@@ -3,6 +3,13 @@
 ---
 
 
+### Image Classification
+[![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://colab.research.google.com/drive/1wTHIUf6anWoOEUkyfKGhtUAc59mTbAfX?usp=sharing)
+
+<div style="text-align: justify">Image classification using Tensorflow to classify Rock-Paper-Scissor image dataset. This is my project assignment from <a href='https://www.dicoding.com/'>Dicoding Machine Learning Course</a>.</div>
+<br>
+
+---
 ### Fraud Classification
 [![Run in Google Colab](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://colab.research.google.com/drive/1YJSJqN7X-fo9TnkQxPFdiK9KQWhPLEJV?usp=sharing)
 
@@ -41,7 +48,6 @@ Example: Customers often buy bread with milk. So, we can make a packet of bread 
 
 ---
 ### Sales Analysis
-
 [![Open Presentation File](https://img.shields.io/badge/PDF-Open_Presentation_File-blue?logo=adobe-acrobat-reader&logoColor=white)](pdf/Case Study.pdf)
 [![Open Presentation File](https://img.shields.io/badge/Google%20Data%20Studio-Open_Google%20Data%20Studio-blue)](https://datastudio.google.com/reporting/099d224f-f7b0-4c5d-b8e7-3751bd88fd76)
 
@@ -49,8 +55,32 @@ Sales Analysis using Google Speadsheet. This is my final assignment from [Anakda
 <br>
 <center><img src="images/Case Study.png"/></center>
 
+---
+### Sales Data Analysis and Forecasting
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/rianaaar/sales-data-analysis)
+<div style="text-align: justify">
+The benefit of analysis is predicting future sales and knowing that promo items and card promos affect the number of items sold or not.
+These results can be used to determine a good strategy to increase sales. </div>
+<br>
+<center><img src="https://github.com/rianaaar/sales-data-analysis/blob/master/arima.png"/></center>
 
+---
+### Book Recommendation using similarity
+[![Open Notebook](https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter)](project/Book_Recommend.html)
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/rianaaar/book_recommendations)
+<div style="text-align: justify">
+This model recommends 10 similar books based on the title entered by the reader.
+This recommendation is based on the similarity of the title, author, and book publisher. This makes it easier for the reader to find a book He/She might like too. In addition, it can also recommend books that are less interested to read but have similarities with books that are often read by readers.
+Result.</div>
+<br>
 
+---
+### Data exploration using SQL and R
+[![Open Presentation File](https://img.shields.io/badge/PDF-Open_Presentation_File-blue?logo=adobe-acrobat-reader&logoColor=white)](https://bit.ly/daforecomAar)
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/rianaaar/Data-Analysis-for-e-commerce)
+
+Data Analysis for e-commerce using SQL. Project from the [DQLAB](https://www.dqlab.id/) course.
+<br>
 
 
 
