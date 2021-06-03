@@ -62,7 +62,7 @@ Sales Analysis using Google Speadsheet. This is my final assignment from [Anakda
 The benefit of analysis is predicting future sales and knowing that promo items and card promos affect the number of items sold or not.
 These results can be used to determine a good strategy to increase sales. </div>
 <br>
-<center><img src="https://github.com/rianaaar/sales-data-analysis/blob/master/arima.png"/></center>
+<center><img src="images/arima.png"/></center>
 
 ---
 ### Book Recommendation using similarity
