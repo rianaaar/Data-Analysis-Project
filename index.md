@@ -38,7 +38,7 @@ RFM stands for Recency, Frequency, and Monetary value, each corresponding to som
 
 ---
 ### Market Basket Analysis
-[![Open R Code](https://img.shields.io/badge/%20Studio-Open%20R%20Code-blue?logo=r)](project/mba.Rmd)
+[![Open R Code](https://img.shields.io/badge/%20Studio-Open%20R%20Code-blue?logo=r)](https://github.com/rianaaar/rianaaar.github.io/blob/main/project/mba.Rmd)
 <div style="text-align: justify">Bread Store is a restaurant that sells food and drinks. The increasing number of competitors makes bakeries must continue to innovate. In addition, many products sell very slowly, so their stock builds up. One solution to overcome this problem is to make product packaging that has a strong association (often bought together). We can use the Market Basket Analysis method. 
 
 Example: Customers often buy bread with milk. So, we can make a packet of bread with milk. This strategy can attract customers to buy more than 1 product and can increase revenue.
